@@ -24,6 +24,7 @@ h2 {
     opacity: 0.6;
 
 }
+/* when the screen is 700px max or less than that then it enters this and here the font-size sets to 6rem*/
 @media(max-width:700px) {
     #time{
         font-size: 6rem;
