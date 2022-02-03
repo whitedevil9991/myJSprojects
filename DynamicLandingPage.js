@@ -54,5 +54,38 @@ greeting.textContent='good afternoon';
     }
 }
 
+/*get focus = this stores the focus thing you edited so the next time you refresh
+the screen it will be saved in the local storage*/
+function getFocus(){
+    if(localStorage.getItem('focus')==null) {
+        focus.textContent='[enter focus]';
+    }
+    else {
+        focus.textContent=localStorage.getItem('focus');
+        }
+}
+function getName(){
+    if(localStorage.getItem('name')==null) {
+        name.textContent='[enter name]';
+    }
+    else {
+        name.textContent=localStorage.getItem('name');
+        }
+}
+function setName(){
+    if(e.type==='keypress'){
+
+    } else{
+        
+    }
+}
+
+//
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
+
 //run
 ShowTime();
+setbg();
+getFocus();
+getName();
