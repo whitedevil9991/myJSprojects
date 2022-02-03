@@ -54,16 +54,7 @@ greeting.textContent='good afternoon';
     }
 }
 
-/*get focus = this stores the focus thing you edited so the next time you refresh
-the screen it will be saved in the local storage*/
-function getFocus(){
-    if(localStorage.getItem('focus')==null) {
-        focus.textContent='[enter focus]';
-    }
-    else {
-        focus.textContent=localStorage.getItem('focus');
-        }
-}
+
 function getName(){
     if(localStorage.getItem('name')==null) {
         name.textContent='[enter name]';
@@ -72,6 +63,7 @@ function getName(){
         name.textContent=localStorage.getItem('name');
         }
 }
+//set name 
 function setName(){
     if(e.type==='keypress'){
 
@@ -84,10 +76,36 @@ function setName(){
         localStorage.setItem('name', e.target.innerText);
     }
 }
+/*get focus = this stores the focus thing you edited so the next time you refresh
+the screen it will be saved in the local storage*/
+function getFocus(){
+    if(localStorage.getItem('focus')==null) {
+        focus.textContent='[enter focus]';
+    }
+    else {
+        focus.textContent=localStorage.getItem('focus');
+        }
+}
+//set focus
+function setFocus(e){
+    if(e.type==='keypress'){
+
+        //make sure enter is pressed
+        if(e.which == 13 || e.keyCode ==13){
+           localStorage.setItem('focus',e.target.innerText);
+           focus.blur(); 
+        }
+    } else{
+        localStorage.setItem('focus', e.target.innerText);
+    }
+}
 
 //
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
+
 
 //run
 ShowTime();
