@@ -20,8 +20,8 @@ function ShowTime() {
     // 12hr format
     hour = hour%12 | 12 ;
 
-    //output the time
-    time.innerHTML='${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}';
+    //output time
+    time.innerHTML='${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}${showAmPm ? amPm : }';
 
 
     /*takes in function showtime and when do we want to call it, like in interval
