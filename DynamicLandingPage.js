@@ -4,6 +4,9 @@ greeting=document.getElementById('greeting'),
 name=document.getElementById('name'),
 focus=document.getElementById('focus');
 
+//options
+const showAmPm = true;
+ 
 // a function to show the time
 function ShowTime() {
     let today = new Date(),
